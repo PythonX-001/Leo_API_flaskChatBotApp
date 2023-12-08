@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100;300;400;500;700;800;900&display=swap");
+* {
+    box-sizing: border-box;
+    font-family: "Alegreya Sans", sans-serif;
+    padding: 0;
+
+}
+
+
+body
+{
+font-family: Garamond;
+background-color: #343541;
+
+}
+h1
+{
+color: black;
+margin-bottom: 0;
+margin-top: 0;
+text-align: center;
+font-size: 40px;
+}
+h3
+{
+color: black;
+font-size: 20px;
+margin-top: 3px;
+text-align: center;
+}
+#chatbox{
+
+    background-color: #343541;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    gap: 10px;
+
+
+}
+.userReponce{
+    background-color: #343541;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    gap: 10px;
+}
+.aiGreeting{
+    display: flex;
+    border-radius: 5px;
+    width: 100%;
+    background-color: #40414F;
+}
+
+#userInput {
+position:fixed;
+bottom: 0px;
+margin-left: auto;
+margin-right: 20px;
+width: 98%;
+margin-top: 60px;
+background: #40414F;
+
+margin: 0 auto;
+padding: 10px;
+display: flex;
+flex-direction: row;
+gap: 50px;
+justify-content: center;
+align-items: center;
+}
+#textInput {
+width: 100%;
+border: none;
+background: #40414F;
+font-family: monospace;
+font-size: 17px;
+outline: none;
+margin: 0;
+
+}
+#buttonInput {
+border: none;
+outline: none;
+cursor: pointer;
+background: transparent;
+
+width: 30px;
+height: 30px;
+}
+
+.userText {
+padding: 10px;
+
+color: white;
+font-family: monospace;
+font-size: 17px;
+text-align: right;
+line-height: 30px;
+background-color: #343541;
+}
+.userText span {
+background-color: #009688;
+padding: 10px;
+border-radius: 2px;
+}
+.botText {
+    margin: 10px;
+color: white;
+font-family: monospace;
+font-size: 17px;
+text-align: left;
+line-height: 30px;
+}
+.botText span {
+
+padding: 10px;
+
+}
+#tidbit {
+position:absolute;
+bottom:0;
+right:0;
+width: 300px;
+}
+
+
+.profile {
+    margin-left: 5px;
+    margin-top:10px ;
+    height: 36px;
+    min-width: 36px;
+    width: 36px;
+    min-height: 36px;
+    border-radius: 5px;
+    background: #32ecbe;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+}
+
+
+@media (max-width: 480px) {
+    .aiGreeting{
+        display: flex;
+        margin: 10px;
+        border-radius: 5px;
+        width: fit-content;
+        background-color: #40414F;
+    }
+    
+}

@@ -1,0 +1,101 @@
+
+.hamburger-icon {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: white;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 55555;
+}
+.X-icon {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: white;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 55555;
+}
+
+.sidebar {
+    position: relative;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 20%;
+    background-color: black;
+    padding-top: 20px;
+    transition: left 0.3s ease-in-out;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar li {
+    border-radius: 0.5em;
+  padding: 0.5em;
+  padding-bottom: 0.2em;
+  transition: 0.3s;
+  margin: 0 10px 0 0;
+
+}
+
+.sidebar a  {
+
+
+    text-decoration: none;
+    color: #ECECF1;
+    height: 1.4em;
+    font-size: 14px;
+    display: block;
+}
+.sidebar h1{
+  font-size: 24px;
+}
+
+.sidebar li:hover {
+    background-color: rgba(85, 85, 85, 0.479);
+}
+
+.main-content {
+    margin-left: 20%;
+    padding: 15px;
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+      position: absolute;
+      z-index: 555556;
+        width: 80%;
+        left: -100%;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .hamburger-icon {
+        display: block;
+    }
+    .X-icon {
+      border: #fff 1px solid;
+      padding:5px ;
+      border-radius: 5px;
+      position: absolute;
+        display: block;
+      z-index: 555557;
+      left:110% ;
+
+    }
+}
+
+
+hr{
+  background-color: #555;
+  color: #555;
+}
