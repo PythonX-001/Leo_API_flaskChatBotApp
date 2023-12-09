@@ -1,56 +1,71 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://dergo.vercel.app/favicon.ico"
+    />
+    <link rel="stylesheet" type="text/css" href="/static/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<link rel="icon" type="image/svg+xml" href="https://dergo.vercel.app/favicon.ico">
-<link rel="stylesheet" type="text/css" href="/static/style.css">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <title>No0ne test</title>
 
-<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-<title>None0 test</title>
+    <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <h1>No0ne AI test</h1>
+    <div>
+      <div id="chatbox">
+        <div class="aiGreeting">
+          <div class="profile">
+            <img src="{{url_for('static', filename='bot.svg')}}" />
+          </div>
+          <p class="botText"><span> Hi! I'm No0ne.</span></p>
+        </div>
+      </div>
 
-<script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-</head>
-<body>
-<h1>None AI test </h1>
-<div>
-<div id="chatbox">
-    <div class="aiGreeting">
-        <div class="profile"><img src="{{url_for('static', filename='bot.svg')}}" /></div>
-        <p class="botText"><span> Hi! I'm None0.</span></p>
+      <div id="userInput">
+        <input
+          id="textInput"
+          type="text"
+          name="msg"
+          placeholder="Ask None..."
+        />
+        <button id="buttonInput" type="submit">
+          <img src="https://dergo.vercel.app/assets/send-f2246764.svg" />
+        </button>
+      </div>
+      <script>
+        function getBotResponse() {
+          var rawText = $("#textInput").val();
+          var userHtml = '<p class="userText"><span>' + rawText + "</span></p>";
+          $("#textInput").val("");
+          $("#chatbox").append(userHtml);
+          document
+            .getElementById("userInput")
+            .scrollIntoView({ block: "start", behavior: "smooth" });
+          $.get("/get", { msg: rawText }).done(function (data) {
+            var botHtml =
+              '<div class="aiGreeting"><div class="profile"><img src="https://dergo.vercel.app/assets/bot-61bdb6bf.svg" /></div><p dir="auto" class="botText"><span>' +
+              data +
+              "</span></p></div>";
+            $("#chatbox").append(botHtml);
+            document
+              .getElementById("userInput")
+              .scrollIntoView({ block: "start", behavior: "smooth" });
+          });
+        }
+        $("#textInput").keypress(function (e) {
+          if (e.which == 13) {
+            getBotResponse();
+          }
+        });
+        $("#buttonInput").click(function () {
+          getBotResponse();
+        });
+      </script>
     </div>
-
-
-</div>
-
-<div id="userInput">
-    <input id="textInput" type="text" name="msg" placeholder="Ask None...">
-    <button id="buttonInput" type="submit"><img src="https://dergo.vercel.app/assets/send-f2246764.svg" ></button>
-</div>
-<script>
-function getBotResponse() {
-
-var rawText = $("#textInput").val();
-var userHtml = '<p class="userText"><span>' + rawText + '</span></p>';
-$("#textInput").val("");
-$("#chatbox").append(userHtml);
-document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
-$.get("/get", { msg: rawText }).done(function(data) {
-var botHtml = '<div class="aiGreeting"><div class="profile"><img src="https://dergo.vercel.app/assets/bot-61bdb6bf.svg" /></div><p dir="auto" class="botText"><span>' + data + '</span></p></div>';
-$("#chatbox").append(botHtml);
-document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
-});
-}
-$("#textInput").keypress(function(e) {
-if(e.which == 13) {
-getBotResponse();
-}
-});
-$("#buttonInput").click(function() {
-getBotResponse();
-})
-</script>
-</div>
-</body>
+  </body>
 </html>
